@@ -3,3 +3,4 @@
 
 # ignore all .html files
 *.html
+*.Rmd

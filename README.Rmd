@@ -2,7 +2,7 @@
 title: "MATsim population generation"
 author: "Tom Aexander"
 date: '2022-11-21'
-output: html_document
+output: md_document
 ---
 
 ```{r setup, include=FALSE}
