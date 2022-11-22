@@ -1,0 +1,5 @@
+
+# see https://github.com/github/gitignore for .gitignore templates
+
+# ignore all .html files
+*.html
