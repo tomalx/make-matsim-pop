@@ -3,9 +3,9 @@
 ### SET POP SIZE ###
 #popSize <- 100
 
-homePoints <- read_sf("rScript/dinas/shp/homePoints.shp")
-workPoints <- read_sf("rScript/dinas/shp/workPoints.shp")
-zones <- read_sf("rScript/dinas/shp/zones.shp")
+homePoints <- read_sf("shp/homePoints.shp")
+workPoints <- read_sf("shp/workPoints.shp")
+zones <- read_sf("shp/zones.shp")
 
 #add zone attribute to homePoints and workPoints
 homePoints <- st_intersection(homePoints,zones) %>% na.omit() %>% mutate(homeZone = zone) %>% select(-c(id,zone))
@@ -17,15 +17,14 @@ rm(zones)
 
 library(VGAM) # for skew norm
 
-setwd("~/matsim/dataPrep/population")
 
 ####################################################
 
 #########################          Agent name/id           ##############################################
-source("Rscript/profiles/randomReference/threeByThree_nameGen.R")
+source("helperFun/threeByThree_nameGen.R")
 myPop <- tibble(.rows = popSize)
 myPop <- myPop %>% mutate(id = agentNameGenSimple2(popSize) )  
-#rm(list = ls()[! ls() %in% c("myPop","popSize","homePoints","workPoints")]) # remove all objects except myPop
+rm(list = ls()[! ls() %in% c("myPop","popSize","homePoints","workPoints", "popFile")]) # remove all objects except myPop
 
 #########################        agent locations               ###############################################
 
@@ -88,7 +87,7 @@ myPop <- myPop %>% mutate(sex = sample(c("m","f"), popSize, replace = TRUE, prob
 
 #########################        agent activities               ###############################################
 
-source("rScript/routines/helperFunctions/addTimes.R")
+source("helperFun/addTimes.R")
 
 
 myPop <- myPop %>% mutate(activity1 = "home")
