@@ -21,7 +21,7 @@ library(tictoc)
 setwd(choose.dir(default = "", caption = "Select folder"))
 
 popFile <- "xml/dinasPop.xml"
-popSize <- 100
+popSize <- 500
 
 ############################################################
 ####                    run                             ####
