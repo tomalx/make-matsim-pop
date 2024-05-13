@@ -20,7 +20,7 @@ library(tictoc)
 # setwd("~/matsim/dataPrep/population/make-matsim-pop")   
 setwd(choose.dir(default = "", caption = "Select folder"))
 
-popFile <- "xml/dinasPop.xml"
+popFile <- "xml/bus6or7pop.xml"
 popSize <- 500
 
 ############################################################

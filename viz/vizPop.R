@@ -1,7 +1,7 @@
 
 
 setwd("~/matsim/dataPrep/population")
-#popFile <- "xml/dinas4/dinasPop.xml"
+popFile <- "xml/dinas4/dinasPop.xml"
 # load pop DF
 popDF <- readRDS(paste0(str_remove(popFile, ".xml"),".rds"))
 zones <- read_sf("~/matsim/dataPrep/population/rScript/dinas/shp/zones.shp")
